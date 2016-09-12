@@ -1,20 +1,21 @@
 lotApp.provider.controller('rouCtrl', ['$scope', '$interval', function($scope, $interval) {
-    var lot,
-        deg = Math.PI / 180,
-        timer = null,
-        stop = false,
-        running = false,
-        speed = 300,
-        stepall,
-        stepfast = 7,
-        pointerIndex,
-        stepslow,
-        stepping,
-        slotAngle,
-        state,
-        newAward,
-        selectedSlot,
-        playAfter;
+    var lot,//?
+        deg = Math.PI / 180, //角度
+        timer = null,//定时器
+        stop = false,//停止
+        running = false,//启动
+        speed = 300,   //速度
+        stepall,//总步数
+        stepfast = 7, //一步的快速速
+        pointerIndex, //?
+        stepslow,//一步的慢速速
+        stepping,// 时速
+        slotAngle,//?
+        state,//状态
+        newAward,//奖品
+        selectedSlot,//?
+        playAfter;//抽奖后？
+    //state = 2
     var setup = function() {
         clearTimer();
         state = 0;
@@ -26,6 +27,7 @@ lotApp.provider.controller('rouCtrl', ['$scope', '$interval', function($scope, $
         drawBg();
         drawPointer();
     };
+    //绘制槽位信息？
     var drawAward = function(oAward, posx, posy) {
         var title, pic, eleWrap, eleBg, eleTitle;
         title = oAward.title;
@@ -45,7 +47,8 @@ lotApp.provider.controller('rouCtrl', ['$scope', '$interval', function($scope, $
 
         return eleWrap;
     };
-    var drawBg = function() {
+    //绘制背景
+    var drawBg = function() {//绘制背景
         var $wrap = $('#rouletteWrap'),
             startAngle = 270 - (slotAngle / 2),
             endAngle = startAngle + slotAngle,
@@ -85,7 +88,8 @@ lotApp.provider.controller('rouCtrl', ['$scope', '$interval', function($scope, $
             endAngle += slotAngle;
         }
     };
-    var drawPointer = function() {
+    //绘制指针
+    var drawPointer = function() {//绘制指针
         var elePlate = document.querySelector('.roulette-plate'),
             elePointer = document.querySelector('.roulette-pointer'),
             ctx = elePlate.getContext('2d'),
@@ -119,7 +123,8 @@ lotApp.provider.controller('rouCtrl', ['$scope', '$interval', function($scope, $
         ctx.textBaseline = "middle";
         ctx.strokeText("抽奖", elePlate.width / 2, elePlate.height / 2);
     };
-    var rotate = function() {
+    //旋转
+    var rotate = function() {//旋转
         if (state === 1) {
             if (stepping > 7) {
                 if (lot.autostop === 'Y' && stepping >= lot.maxstep) {
@@ -156,9 +161,11 @@ lotApp.provider.controller('rouCtrl', ['$scope', '$interval', function($scope, $
         stepslow = stepall - 7;
         stepping = 0;
     };
+    //停止抽奖后
     var onStopRotate = function() {
         playAfter();
     };
+    //开始抽奖 state= 0
     var startClick = function() {
         $scope.$parent.play(function success(result, after) {
             if (running) return;
@@ -172,6 +179,7 @@ lotApp.provider.controller('rouCtrl', ['$scope', '$interval', function($scope, $
             state = 2;
         });
     };
+    //运行中 state= 1
     var endClick = function() {
         if (stop) return;
         clearTimer();
@@ -198,7 +206,7 @@ lotApp.provider.controller('rouCtrl', ['$scope', '$interval', function($scope, $
                 break;
             case 2: //完成1次后再次开始
                 setup();
-                $scope.act();
+                $scope.act(); //回调
                 break;
             default:
                 return;
