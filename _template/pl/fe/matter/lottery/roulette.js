@@ -214,6 +214,7 @@ lotApp.provider.controller('rouCtrl', ['$scope', '$interval', function($scope, $
     };
     $scope.$on('xxt.app.lottery.ready', function(params) {
         lot = $scope.$parent.lot;
+        console.log(lot);
         setup();
     });
 }]);
