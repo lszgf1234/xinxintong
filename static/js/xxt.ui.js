@@ -414,7 +414,7 @@ angular.module('ui.xxt', ['ui.bootstrap'])
                 hideAccessControl: '@'
             },
             controller: 'AccessControlController',
-            templateUrl: '/static/template/accesscontrol.html?_=9',
+            templateUrl: '/static/template/accesscontrol.html?_=9'//一个html字符串
         }
     })
     .directive('userpopover', ['http2', function (http2) {
@@ -584,7 +584,7 @@ angular.module('ui.xxt', ['ui.bootstrap'])
             controller: 'UserPickerController',
             templateUrl: function () {
                 return '/rest/mp/user/picker';
-            },
+            }
         };
     }])
     .factory('pushnotify', ['$uibModal', function ($uibModal) {

@@ -202,7 +202,7 @@ xxtMatters.directive('tinymce', function($timeout) {
     return {
         restrict: 'EA',
         scope: {
-            id: '@',
+            id: '@',//???
             height: '=',
             content: '=',
             contenteditable: '=',

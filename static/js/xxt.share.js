@@ -1,5 +1,5 @@
 (function() {
-    var setWxShare = function(title, link, desc, img) {
+    var setWxShare =    function(title, link, desc, img) {
         window.wx.onMenuShareTimeline({
             title: window.xxt.share.options.descAsTitle ? desc : title,
             link: link,
