@@ -22,7 +22,7 @@ define(['angular', 'xxt-page'], function(angular, uiPage) {
             });
             return _params;
         };
-
+         //定义方式没见过  ？？  this.$get
         this.$get = function() {
             return {
                 p: _params,
@@ -105,11 +105,13 @@ define(['angular', 'xxt-page'], function(angular, uiPage) {
             });
             return deferred.promise;
         };
+        //添加模板页面
         $http.get(LS.j('pageGet', 'site', 'app')).success(function(rsp) {
             if (rsp.err_code !== 0) {
                 $scope.errmsg = rsp.err_msg;
                 return;
             }
+            //动态加载css和js  待研究？？
             var params;
             params = rsp.data;
             uiPage.loadCode(ngApp, params.page).then(function() {
@@ -118,6 +120,7 @@ define(['angular', 'xxt-page'], function(angular, uiPage) {
         });
     }]);
     /***/
+   //？
     angular._lazyLoadModule('group');
     /***/
     return ngApp;
