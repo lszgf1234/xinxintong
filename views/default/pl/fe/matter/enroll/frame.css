@@ -45,6 +45,11 @@ body{font-family:Microsoft Yahei,Arial;}
 #schema-view .schema-options .option button{position:absolute;top:50%;right:5px;margin-top:-10px;}
 #schema-view [editable]{cursor:text;}
 #schema-view .actions{margin-top:10px;padding-top:10px;border-top:1px dotted #ddd;}
+/*描述样式*/
+#schema-view .description{display: flex;min-height: 34px;}
+#schema-view .description>div{flex: 1}
+#schema-view .description .left span{display: block;cursor: text}
+#schema-view .description .right{align-self: stretch; cursor: move}
 
 /*page-view*/
 #page-view .schema-switch{position:absolute;top:50%;margin-top:-10px;right:4px;}
