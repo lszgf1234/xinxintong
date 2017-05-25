@@ -50,6 +50,7 @@ body{font-family:Microsoft Yahei,Arial;}
 #schema-view .description>div{flex: 1}
 #schema-view .description .left span{display: block;cursor: text}
 #schema-view .description .right{align-self: stretch; cursor: move}
+#schema-view .schemas .title span{font-weight: bold}
 
 /*page-view*/
 #page-view .schema-switch{position:absolute;top:50%;margin-top:-10px;right:4px;}
