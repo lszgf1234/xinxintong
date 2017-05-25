@@ -72,7 +72,7 @@
                         <th style='width:140px'>用户昵称</th>
                         <th style='width:100px'>登记时间</th>
                         <th style='width:100px' ng-if="app.multi_rounds==='Y'">登记轮次</th>
-                        <th class='custom-col row' ng-repeat="c in recordSchemas">{{c.title}}</th>
+                        <th class='custom-col row' ng-repeat="c in recordSchemas">{{c.title + '('+ c.description+')'}}</th>
                         <th ng-if="app.scenario==='quiz'">总分</th>
                         <th class='custom-col matched enroll' ng-repeat="c in enrollDataSchemas">{{c.title}}</th>
                         <th class='custom-col matched group' ng-repeat="c in groupDataSchemas">{{c.title}}</th>
