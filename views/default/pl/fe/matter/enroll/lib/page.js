@@ -158,8 +158,8 @@ define(['wrap'], function(SchemaWrap) {
                     }else{
                         $dom.find('[class="description"]').html(oSchema.description);
                     }
-                }else{//移除时使用
-                    $dom.find('[class="description"]')[0].remove();
+                }else if(oSchema.descriptionShoworhide===false){//移除时使用
+                    $dom.find('[class="description"]')[0]&&$dom.find('[class="description"]')[0].remove();
                 }
                 if (wrap = this.wrapBySchema(oSchema)) {
                     wrap.type = $dom.attr('wrap');

@@ -313,6 +313,7 @@ define(['frame', 'schema', 'wrap'], function (ngApp, schemaLib, wrapLib) {
             schema.description = '题目描述';
             //由于内容可能为空，所以增加字段控制显示隐藏
             schema.descriptionShoworhide = true;
+            //$scope.descriptionFocus = true;
 
             $scope.updSchema(schema);
         };
