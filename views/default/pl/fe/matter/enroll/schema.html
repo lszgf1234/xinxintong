@@ -115,9 +115,9 @@
                     <button class='btn btn-sm btn-default' ng-click="downSchema(schema)"><span class='glyphicon glyphicon-arrow-down'></span></button>
                     <button class='btn btn-sm btn-default' ng-click="removeSchema(schema)"><span class='glyphicon glyphicon-trash'></span></button>
                     <div class="pull-right" ng-if="['single', 'multiple', 'image', 'file'].indexOf(schema.type)!==-1">
-                      <button class="btn btn-default btn-sm" ng-click="addDescription(schema)">增加题目描述</button>
+                      <button class="btn btn-default btn-sm" ng-click="addDescription(schema)" ng-show="!schema.descriptionShoworhide">增加题目描述</button>
                       <!--<button class="btn btn-default btn-sm" ng-click="changeDescription(schema)">修改题目描述</button>-->
-                      <button class="btn btn-default btn-sm" ng-click="removeDescription(schema);descriptionShoworhide=false">删除题目描述</button>
+                      <button class="btn btn-default btn-sm" ng-click="removeDescription(schema)" ng-show="schema.descriptionShoworhide">删除题目描述</button>
                     </div>
                 </div>
             </div>

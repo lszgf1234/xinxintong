@@ -152,11 +152,11 @@ define(['wrap'], function(SchemaWrap) {
             $html = $('<div>' + this.html + '</div>');
             if ($dom = $html.find("[schema='" + oSchema.id + "']")) {
                 //增加一个描述。如果没有添加
-                if(schema.descriptionShoworhide){
+                if(oSchema.descriptionShoworhide){
                     if(!$dom.find('[class="description"]').length){
-                        $('<div class="description">' + schema.description + '</div>').insertAfter($dom.find('label')[0])
+                        $('<div class="description">' + oSchema.description + '</div>').insertAfter($dom.find('label')[0])
                     }else{
-                        $dom.find('[class="description"]').html(schema.description);
+                        $dom.find('[class="description"]').html(oSchema.description);
                     }
                 }else{//移除时使用
                     $dom.find('[class="description"]')[0].remove();
